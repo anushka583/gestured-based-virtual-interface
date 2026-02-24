@@ -18,6 +18,8 @@ cap = cv2.VideoCapture(0)
 
 while True:
     success, frame = cap.read()
+    # Crop upper portion 
+    frame = frame[150:650, 200:800]
     if not success:
         print("Frame not captured")
         break
