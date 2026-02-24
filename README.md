@@ -54,10 +54,13 @@ The goal is to design a modular, scalable interaction framework that can evolve 
 
 ---
 
-## 📂 Project Structure
+## Project Structure
 
 ```
 gesture-virtual-inference/
+│
+├── screenshots/
+│   └── cursor_control.png
 │
 ├── experiments/
 │   ├── test_finger_states.py
@@ -73,6 +76,13 @@ gesture-virtual-inference/
 ├── README.md
 └── requirements.txt
 ```
+## Demo - Cursor control
+
+Real-time hand tracking with smoothed cursor movement and pinch-based click detection.
+
+![Cursor Control](screenshots/cursor_control.png)
+
+---
 
 
 ## Tech Stack
