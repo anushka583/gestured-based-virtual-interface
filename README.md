@@ -12,20 +12,11 @@ AirUI explores the concept of **computer vision as an interaction layer for soft
 
 # Demo
 
-## Cursor Control
-![Cursor Control](screenshots/cursor_control.png)
+![Cursor Control](screenshots/cursor_control.gif)
 
-## AirCanvas Drawing
-![AirCanvas Drawing](screenshots/air_canvas.png)
+![AirCanvas Drawing](screenshots/air_canvas.gif)
 
-## Color Palette
-![Color Palette](screenshots/color_palette.png)
-
-## System Control
-![System Control](screenshots/system_control.png)
-
-## Screenshot Trigger
-![Screenshot Trigger](screenshots/.png)
+![Screenshot Trigger](screenshots/screenshot_1773232784.png)
 
 
 ---
@@ -178,11 +169,11 @@ gestured-based-virtual-interface/
 │   └── test_swipe_detection.py
 │
 ├── screenshots/
-│   ├── cursor_control.png
-│   ├── air_canvas.png
-│   ├── color_palette.png
-│   ├── system_control.png
-│   └── screenshot_gesture.png
+│   ├── cursor_control.gif
+│   ├── air_canvas.gif
+│   |__ screenshot_1773232784.png
+│   
+│   
 │
 ├── requirements.txt
 ├── README.md

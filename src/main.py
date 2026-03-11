@@ -157,7 +157,7 @@ class GestureApp(QMainWindow):
                 ring_up = ring_tip.y < hand_landmarks.landmark[14].y
                 pinky_up = pinky_tip.y < hand_landmarks.landmark[18].y
 
-                fist = not index_up and not middle_up and not ring_up and not pinky_up
+                fist = (not index_up and not middle_up and not ring_up and not pinky_up and abs(thumb_tip.x-index_tip.x) < 0.05)
 
                 # ---------------------------------------
                 # Mode switching
@@ -181,9 +181,9 @@ class GestureApp(QMainWindow):
                 # Close app gesture
                 # ---------------------------------------
 
-                if fist and self.swipe_cooldown == 0:
+                if fist and self.swipe_cooldown == 0 and self.mode == "CONTROL":
                     close_app()
-                    self.swipe_cooldown = 30
+                    self.swipe_cooldown = 40
 
                 # ---------------------------------------
                 # Swipe detection
@@ -230,7 +230,8 @@ class GestureApp(QMainWindow):
                 # Draw mode
                 # ---------------------------------------
 
-                if self.mode == "DRAW":
+                if index_up and middle_up and not ring_up and not pinky_up:
+                    self.mode = "DRAW"
 
                     x = int(index_tip.x * w)
                     y = int(index_tip.y * h)
@@ -365,7 +366,7 @@ class GestureApp(QMainWindow):
 
         qt_img = QImage(rgb.data, w, h, QImage.Format_RGB888)
 
-        self.label.setPixmap(QPixmap.fromImage(qt_image))
+        self.label.setPixmap(QPixmap.fromImage(qt_img))
 
     def closeEvent(self, event):
 
